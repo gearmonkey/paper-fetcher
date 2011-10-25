@@ -25,8 +25,8 @@ ISMIR_PROGRAM = ISMIR_BASE + '/program2011.html'
 def main():
 	fields = ("num", "title", "authors")
 	meta_writer = csv.DictWriter(open('metadata.tsv', 'w'), 
-								 fieldnames = fields, 
-								 delimiter='\t')
+	                            fieldnames = fields, 
+	                            delimiter='\t')
 	meta_writer.writerow(dict(zip(fields, fields)))
 	pat = re.compile("""<li>\((.*?)\).*?<a href="(.*?)">(.*?)</a><br>(.*?)</li>""")
 	print 'fetching schedule from', ISMIR_PROGRAM
